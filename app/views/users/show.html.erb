@@ -5,10 +5,17 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+       <% unless @user.reports.empty? %>
+        <table class="reports" summary="User reports">
+          <%= render @reports %>
+        </table>
+      <% end %>
     </td>
     <td class="sidebar round">
-      <strong>Name</strong> <%= @user.name %><br />
-      <strong>URL</strong>  <%= link_to (user_path(@user), @user)%>
+      <b>Name</b> <%= @user.name %><br />
+      <b>URL</b>  <%= link_to (user_path(@user), @user)%><br />
+      <b>Balance</b> <%= 23+67%>$
+
     </td>
   </tr>
 </table>

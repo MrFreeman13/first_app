@@ -1,8 +1,25 @@
 <h1>WELCOME!!!</h1>
 
+<% if signed_in? %>
+  <table class="front" summary="For signed-in users">
+    <tr>
+      <td class="main">
+        <h1 class="report">Please, add a new financial event</h1>
+        <%= render 'shared/report_form' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/user_info' %>
+      </td>
+    </tr>
+  </table>
+<% else %>
+
+
 <p>
  Welcome to the main page of Finance Planner application.
   If you have not yet with us - click on the button below.
 </p>
 
 <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+
+  <% end %>

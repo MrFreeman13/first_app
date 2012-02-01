@@ -1,8 +1,17 @@
 FirstApp::Application.routes.draw do
+  get "reports/create"
+
+  get "reports/destroy"
+
+  get "report/create"
+
+  get "report/destroy"
+
   get "sessions/new"
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :reports,  :only => [:create, :destroy]
 
   match '/signup',  :to => 'users#new'
   match '/signin',  :to => 'sessions#new'
