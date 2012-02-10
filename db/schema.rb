@@ -10,13 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130225036) do
+ActiveRecord::Schema.define(:version => 20120209115852) do
 
-  create_table "reports", :force => true do |t|
+  create_table "planners", :force => true do |t|
     t.integer  "user_id"
     t.string   "kind_of"
-    t.string   "date"
-    t.string   "money"
+    t.string   "time"
+    t.integer  "money"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -4,6 +4,11 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+       <% unless @user.planners.empty? %>
+        <table class="planners" summary="User's planners">
+          <%= render @planners %>
+        </table>
+      <% end %>
       </h1>
     </td>
     <td class="sidebar round">

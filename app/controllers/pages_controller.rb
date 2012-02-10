@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
+    @planner = Planner.new if signed_in?
   end
 
   def contact

@@ -143,8 +143,15 @@ td.sidebar {
   margin-bottom: -15px;
 }
 
-div.field, div.actions {
+div.actions {
   margin-bottom: 10px;
+}
+
+div.field {
+
+  margin-bottom: 10px;
+  min-width : 30px;
+  min-height: 10px;
 }
 
 .field_with_errors {
@@ -183,4 +190,48 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+
+<tr>
+  <td class="report">
+    <span class="kind_of">exp/inc <%=planner.kind_of %></span>
+    <span class="time">Added: <%=planner.time %></span>
+    <span class="money"> <%=planner.money %>$</span>
+    <span class="comments"><%=planner.comments %></span>
+  </td>
+</tr>
+
+
+
+
+table.planners {
+  margin-top: 1em;
+}
+
+table.planners tr {
+  height: 70px;
+}
+
+table.planners tr td.gravatar {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  width: 50px;
+}
+
+table.planners tr td.planner {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+span.kind_of, span.money, span.time {
+
+    width: 20px
+}
+
+span.comments {
+     width: 100px;
+    font-size: 20px;
+
 }
