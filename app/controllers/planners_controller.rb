@@ -1,5 +1,6 @@
 class PlannersController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, :only => [:create, :destroy]
+  before_filter :authorized_user, :only => :destroy
 
   def create
     @planner  = current_user.planners.build(params[:planner])
@@ -11,9 +12,17 @@ class PlannersController < ApplicationController
     end
   end
 
-  def destroy
+   def destroy
+     @planner.destroy
+     redirect_back_or root_path
+   end
 
-  end
+  private
+
+    def authorized_user
+      @planner = current_user.planners.find_by_id(params[:id])
+      redirect_to root_path if @planner.nil?
+    end
 
 
 end

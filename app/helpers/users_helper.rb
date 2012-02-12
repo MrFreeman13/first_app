@@ -6,4 +6,11 @@ module UsersHelper
                                             :gravatar => options)
   end
 
+  def show_balance
+    a = 0
+    b = 0
+    @
+
+  end
+
 end
